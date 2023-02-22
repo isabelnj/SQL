@@ -1,0 +1,33 @@
+--Create a bodega database
+
+CREATE TABLE bodega (id INTEGER PRIMARY KEY, item TEXT, brand TEXT, cost NUMERIC, aisle INTEGER);
+
+INSERT INTO bodega VALUES (1, "candle", "Meyers", 10, 2);
+INSERT INTO bodega VALUES (2, "soap", "Dove", 3.50, 2);
+INSERT INTO bodega VALUES (3, "tissues", "Kleenex", 4.90, 2);
+INSERT INTO bodega VALUES (4, "almonds", "Smokeys", 7.50, 3);
+INSERT INTO bodega VALUES (5, "club soda", "La Croix", 6, 3);
+INSERT INTO bodega VALUES (6, "TP", "Angel Soft", 5, 2);
+INSERT INTO bodega VALUES (7, "gum", "Eclipse", 2.10, 1);
+INSERT INTO bodega VALUES (8, "medicine", "Advil", 9.50, 1);
+INSERT INTO bodega VALUES (9, "chocolate", "Hershey's", 5, 3);
+INSERT INTO bodega VALUES (10, "juice", "Motts", 2.10, 3);
+INSERT INTO bodega VALUES (11, "water", "Essentia", 5, 3);
+INSERT INTO bodega VALUES (12, "paper towels", "Presto", 3, 2);
+INSERT INTO bodega VALUES (13, "napkins", "Bounty", 3, 2);
+INSERT INTO bodega VALUES (14, "gift card", "Uber", 25, 1);
+INSERT INTO bodega VALUES (15, "gift card", "Seamless", 25, 1);
+
+--display database.
+SELECT * FROM bodega;
+
+--display database ordered by price.
+SELECT item, cost FROM bodega ORDER BY cost;
+
+--display total cost of all items per aisle.
+SELECT aisle, SUM(cost) FROM bodega GROUP BY aisle;
+
+
+
+
+
